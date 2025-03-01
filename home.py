@@ -26,3 +26,25 @@ modelo = carregar_modelo()
 st.title("Previsão de preços de imóveis")
 
 
+longitude = st.number_input("Longitude", value = -122.33)
+latitude = st.number_input("Latitude", value = 37.88)
+
+housing_median_age = st.number_input("Idade do imóvel", value = 10)
+
+total_rooms = st.number_input("Total de cômodos", value = 800)
+total_bedrooms = st.number_input("Total de quartos", value = 100)
+population = st.number_input("População", value = 300)
+households = st.number_input("Domicílios", value = 100)
+
+median_income = st.slider("Renda média (multiplos de US $ 10k)", 0.5, 15.0, 0.5)
+
+ocean_proximity = st.selectbox("Proximidade do oceano", df["ocean_proximity"].unique())
+
+median_income_cat = st.number_input("Categoria de Renda", value = 4)
+
+rooms_per_househould = st.number_input("Quartos por domicílio", value = 7)
+bedrooms_per_room = st.number_input("Quartos por cômodo", value = 0.2)
+population_per_househould = st.number_input("População por domicílio", value = 2)
+
+    
+
