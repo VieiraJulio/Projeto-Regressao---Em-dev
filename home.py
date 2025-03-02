@@ -26,15 +26,19 @@ modelo = carregar_modelo()
 st.title("Previsão de preços de imóveis")
 
 
-longitude = st.number_input("Longitude", value = -122.33)
-latitude = st.number_input("Latitude", value = 37.88)
+condados = list(gdf_geo["name"].sort_values())
 
-housing_median_age = st.number_input("Idade do imóvel", value = 10)
+selecionar_condado = st.selectbox("Condado", condados)
 
-total_rooms = st.number_input("Total de cômodos", value = 800)
-total_bedrooms = st.number_input("Total de quartos", value = 100)
-population = st.number_input("População", value = 300)
-households = st.number_input("Domicílios", value = 100)
+longitude = gdf_geo.query("name == @selecionar_condado")["longitude"].values
+latitude = gdf_geo.query("name == @selecionar_condado")["latitude"].values
+
+housing_median_age = st.number_input("Idade do imóvel", value = 10, min_value = 1, max_value = 50)
+
+total_rooms = gdf_geo.query("name == @selecionar_condado")["total_rooms"].values
+total_bedrooms = gdf_geo.query("name == @selecionar_condado")["total_bedrooms"].values
+population = gdf_geo.query("name == @selecionar_condado")["population"].values
+households = gdf_geo.query("name == @selecionar_condado")["households"].values
 
 median_income = st.slider("Renda média (multiplos de US $ 10k)", 0.5, 15.0, 0.5)
 
