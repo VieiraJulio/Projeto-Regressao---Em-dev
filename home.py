@@ -44,7 +44,32 @@ median_income_cat = st.number_input("Categoria de Renda", value = 4)
 
 rooms_per_househould = st.number_input("Quartos por domicílio", value = 7)
 bedrooms_per_room = st.number_input("Quartos por cômodo", value = 0.2)
-population_per_househould = st.number_input("População por domicílio", value = 2)
+population_per_household = st.number_input("População por domicílio", value = 2)
+
+entrada_modelo = {
+    "longtiude": longitude,
+    "latitude": latitude,
+    "housing_median_age": housing_median_age,
+    "total_rooms": total_rooms,
+    "total_bedrooms": total_bedrooms,
+    "population": population,
+    "households": households,
+    "median_income": median_income,
+    "ocean_proximity": ocean_proximity,
+    "median_income_cat": median_income_cat,
+    "rooms_per_household": rooms_per_household.
+    "bedrooms_per_room": bedrooms_per_room,
+    "population_per_househould" : population_per_househould
+    
+}
+
+df_entrada_modelo = pd.DataFrame(entrada_modelo, index = [0])
+
+botao_previsao = st.button("Prever preço")
+
+if botao_previsao:
+    preco = modelo.predict(df_entrada_modelo)
+    st.write(f"Preço previsto : $ {preco[0][0]:.2f}")
 
     
 
