@@ -64,7 +64,7 @@ with coluna1:
         "total_bedrooms": total_bedrooms,
         "population": population,
         "households": households,
-        "median_income": median_income,
+        "median_income": median_income / 10, 
         "ocean_proximity": ocean_proximity,
         "median_income_cat": median_income_cat,
         "rooms_per_household": rooms_per_household,
@@ -79,7 +79,7 @@ with coluna1:
     
     if botao_previsao:
         preco = modelo.predict(df_entrada_modelo)
-        st.write(f"Preço previsto : $ {preco[0][0]:.2f}")
+        st.write(f"Preço previsto : US ${preco[0][0]:.2f}")
 
 with coluna2:
     view_state = pdk.ViewState(
