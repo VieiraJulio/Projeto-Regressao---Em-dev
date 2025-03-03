@@ -114,7 +114,7 @@ with coluna1:
     
     if botao_previsao:
         preco = modelo.predict(df_entrada_modelo)
-        st.write(f"Preço previsto : US ${preco[0][0]:.2f}")
+        st.metric(label = "Preço previsto: US($)", value =  f"{preco[0][0]:,.2f}")
 
 with coluna2:
     view_state = pdk.ViewState(
