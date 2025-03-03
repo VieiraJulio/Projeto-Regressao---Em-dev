@@ -43,7 +43,6 @@ def carregar_dados_geo():
             ]
         )
 
-    # Apply the coordinate conversion and store in a new column
     gdf_geo["geometry"] = gdf_geo["geometry"].apply(get_polygon_coordinates)
 
     return gdf_geo
@@ -60,7 +59,7 @@ modelo = carregar_modelo()
 st.title("Previsão de preços de imóveis")
 
 
-condados = list(gdf_geo["name"].sort_values())
+condados = sorted(gdf_geo["name"].unique())
 
 coluna1, coluna2 = st.columns(2)
 
@@ -106,7 +105,7 @@ with coluna1:
         
     }
     
-    df_entrada_modelo = pd.DataFrame(entrada_modelo, index = [0])
+    df_entrada_modelo = pd.DataFrame(entrada_modelo)
     
     botao_previsao = st.button("Prever preço")
     
@@ -132,11 +131,22 @@ with coluna2:
         get_line_color = [255, 255, 255],
         get_line_width = 50
     )
+
+    condado_selecionado = gdf_geo.query("name == @selecionar_condado")
+    
+    highlight_layer = pdk.Layer(
+        "PolygonLayer",
+        data = condado_selecionado[["name", "geometry"]],
+        get_polygon = "geometry",
+        get_fill_color = [255,0,0 , 100],
+        get_line_color = [0, 0, 0],
+        get_line_width = 500
+    )
     
     mapa = pdk.Deck(
         initial_view_state = view_state,
         map_style = "light",
-        layers = [polygon_layer]
+        layers = [polygon_layer, highlight_layer]
     )
 
     st.pydeck_chart(mapa)
