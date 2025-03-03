@@ -129,7 +129,9 @@ with coluna2:
         get_polygon = "geometry",
         get_fill_color = [0,0,255, 100],
         get_line_color = [255, 255, 255],
-        get_line_width = 50
+        get_line_width = 50,
+        pickable = True,
+        auto_highlight = True
     )
 
     condado_selecionado = gdf_geo.query("name == @selecionar_condado")
@@ -140,13 +142,21 @@ with coluna2:
         get_polygon = "geometry",
         get_fill_color = [255,0,0 , 100],
         get_line_color = [0, 0, 0],
-        get_line_width = 500
+        get_line_width = 500,
+        pickable = True,
+        auto_highlight = True
     )
+
+    tooltip = {
+        "html": "<b>Condado:</b> {name}" ,
+        "style": {"backgroundColor": "steelblue", "color": "white", "fontsize": "10px"}
+    }
     
     mapa = pdk.Deck(
         initial_view_state = view_state,
         map_style = "light",
-        layers = [polygon_layer, highlight_layer]
+        layers = [polygon_layer, highlight_layer],
+        tooltip = tooltip
     )
 
     st.pydeck_chart(mapa)
