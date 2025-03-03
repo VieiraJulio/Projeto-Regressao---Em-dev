@@ -91,9 +91,19 @@ with coluna2:
         
     )
 
+    polygon_layer = pdk.Layer(
+        "PolygonLayer",
+        data = gdf_geo[["name", "geometry"]],
+        get_polygon = "geometry",
+        get_fill_color = [0,0,255, 100],
+        get_line_color = [255, 255, 255],
+        get_line_width = 50
+    )
+    
     mapa = pdk.Deck(
         initial_view_state = view_state,
-        map_style = "light"
+        map_style = "light",
+        layers = [polygon_layer]
     )
 
     st.pydeck_chart(mapa)
