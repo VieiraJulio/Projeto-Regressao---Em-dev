@@ -51,7 +51,7 @@ with coluna1:
     
     median_income_cat = np.digitize(median_income / 10 , bins = bins_income)
     
-    rooms_per_househould = gdf_geo.query("name == @selecionar_condado")["rooms_per_househould"].values
+    rooms_per_household = gdf_geo.query("name == @selecionar_condado")["rooms_per_household"].values
     bedrooms_per_room = gdf_geo.query("name == @selecionar_condado")["bedrooms_per_room"].values
     population_per_household = gdf_geo.query("name == @selecionar_condado")["population_per_household"].values
     
@@ -68,7 +68,7 @@ with coluna1:
         "median_income_cat": median_income_cat,
         "rooms_per_household": rooms_per_household,
         "bedrooms_per_room": bedrooms_per_room,
-        "population_per_househould" : population_per_househould
+        "population_per_household" : population_per_household
         
     }
     
