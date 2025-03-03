@@ -57,7 +57,7 @@ with coluna1:
     population_per_household = gdf_geo.query("name == @selecionar_condado")["population_per_household"].values
     
     entrada_modelo = {
-        "longtiude": longitude,
+        "longitude": longitude,
         "latitude": latitude,
         "housing_median_age": housing_median_age,
         "total_rooms": total_rooms,
@@ -83,8 +83,8 @@ with coluna1:
 
 with coluna2:
     view_state = pdk.ViewState(
-        latitude =, 
-        longitude =,
+        latitude = float(latitude[0]), 
+        longitude = float(longitude[0]),
         zoom = 5,
         min_zoom = 5,
         max_zoom = 15
@@ -93,7 +93,7 @@ with coluna2:
 
     mapa = pdk.Deck(
         initial_view_state = view_state,
-        map_sytle = "light"
+        map_style = "light"
     )
 
     st.pydeck_chart(mapa)
