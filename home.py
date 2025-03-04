@@ -56,12 +56,14 @@ gdf_geo = carregar_dados_geo()
 modelo = carregar_modelo()
     
 
-st.title("Previsão de preços de imóveis")
+st.title( " 🏠 Previsão de preços de imóveis", help = "Para sugestões entrar em contato pelo GitHub: VieiraJulio")
+
+st.caption(":gray[Selecione o condado de interesse, a idade do imóvel e a faixa de renda média anual.]")
 
 
 condados = sorted(gdf_geo["name"].unique())
 
-coluna1, coluna2 = st.columns(2)
+coluna1, coluna2 = st.columns(spec = 2)
 
 with coluna1:
 
@@ -130,9 +132,9 @@ with coluna2:
         "PolygonLayer",
         data = gdf_geo[["name", "geometry"]],
         get_polygon = "geometry",
-        get_fill_color = [0,0,255, 100],
+        get_fill_color = [128, 128, 128, 100],
         get_line_color = [255, 255, 255],
-        get_line_width = 50,
+        get_line_width = 500,
         pickable = True,
         auto_highlight = True
     )
@@ -143,8 +145,8 @@ with coluna2:
         "PolygonLayer",
         data = condado_selecionado[["name", "geometry"]],
         get_polygon = "geometry",
-        get_fill_color = [255,0,0 , 100],
-        get_line_color = [0, 0, 0],
+        get_fill_color = [255, 0, 0, 100],
+        get_line_color = [255, 0, 0], # COR AO REDOR DO CONDADO SELECIONADO
         get_line_width = 500,
         pickable = True,
         auto_highlight = True
@@ -152,12 +154,12 @@ with coluna2:
 
     tooltip = {
         "html": "<b>Condado:</b> {name}" ,
-        "style": {"backgroundColor": "steelblue", "color": "white", "fontsize": "10px"}
+        "style": {"backgroundColor": "gray", "color": "white", "fontsize": "10px"}
     }
     
     mapa = pdk.Deck(
         initial_view_state = view_state,
-        map_style = "light",
+        map_style = "dark",
         layers = [polygon_layer, highlight_layer],
         tooltip = tooltip
     )
