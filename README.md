@@ -1,10 +1,19 @@
-# Modelo de projeto de ciência de dados
+### Previsão de Preços de Imóveis | Machine Learning
 
-Modelo de projeto de ciência de dados para ser utilizado como referência em projetos
-futuros. Desenvolvido por mim, [Francisco Bustamante](https://github.com/chicolucio),
-para alunos iniciantes em ciência de dados de meus cursos e mentorias.
+### Objetivo 
 
-Inspiração: [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)
+Atráves de dados do censo do estado da Califórnia, desenvolveremos um modelo de regressão de Machine Learning para prever preços de imóveis. 
+
+
+### DataSet
+
+Origem: [Conjunto de dados](https://www.kaggle.com/datasets/camnugent/california-housing-prices/data)
+
+Este conjunto de dados foi derivado do censo dos EUA de 1990, usando uma linha por grupo
+de blocos censitários. Um grupo de blocos é a menor unidade geográfica para a qual o
+Escritório do Censo dos EUA publica dados amostrais (um grupo de blocos geralmente tem
+uma população de 600 a 3.000 pessoas).
+
 
 Clique no botão **Use this template** para criar um novo repositório com base neste modelo.
 
