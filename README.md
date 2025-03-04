@@ -6,7 +6,7 @@
 
 ### Objetivo 
 
-Atráves de dados do censo do estado da Califórnia, desenvolveremos um modelo de regressão de Machine Learning para prever preços de imóveis. 
+Atráves de dados do censo do estado da Califórnia, desenvolvemos um modelo de regressão de Machine Learning para prever preços de imóveis. 
 
 ### Organização do projeto
 
