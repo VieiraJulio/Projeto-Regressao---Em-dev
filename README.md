@@ -1,5 +1,9 @@
 ### Previsão de Preços de Imóveis | Machine Learning
 
+### Aplicativo no Streamlit
+
+    https://priceprediction-vieirajulio.streamlit.app/
+
 ### Objetivo 
 
 Atráves de dados do censo do estado da Califórnia, desenvolveremos um modelo de regressão de Machine Learning para prever preços de imóveis. 
