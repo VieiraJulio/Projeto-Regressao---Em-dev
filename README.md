@@ -4,29 +4,22 @@
 
 Atráves de dados do censo do estado da Califórnia, desenvolveremos um modelo de regressão de Machine Learning para prever preços de imóveis. 
 
-
-### DataSet
-
-Origem: [Conjunto de dados](https://www.kaggle.com/datasets/camnugent/california-housing-prices/data)
-
-Este conjunto de dados foi derivado do censo dos EUA de 1990, usando uma linha por grupo
-de blocos censitários. Um grupo de blocos é a menor unidade geográfica para a qual o
-Escritório do Censo dos EUA publica dados amostrais (um grupo de blocos geralmente tem
-uma população de 600 a 3.000 pessoas).
-
-
-Clique no botão **Use this template** para criar um novo repositório com base neste modelo.
-
-## Organização do projeto
+### Organização do projeto
 
 ```
-├── .env               <- Arquivo de variáveis de ambiente (não versionar)
-├── .gitignore         <- Arquivos e diretórios a serem ignorados pelo Git
-├── ambiente.yml       <- O arquivo de requisitos para reproduzir o ambiente de análise
-├── LICENSE            <- Licença de código aberto se uma for escolhida
-├── README.md          <- README principal para desenvolvedores que usam este projeto.
+├── .env               <- Arquivo de variáveis de ambiente. (não versionar)
+├── .gitignore         <- Arquivos e diretórios a serem ignorados pelo Git.
+├── requirements.txt   <- O arquivo de requisitos para reproduzir o ambiente de análise.
+├── LICENSE            <- Licença de código aberto (MIT).
+├── README.md          <- README principal para apresentação e desenvolvedores que usam este projeto.
 |
 ├── dados              <- Arquivos de dados para o projeto.
+     │
+|    ├── california_counties.geojson  <- dados espaciais com detalhamento de localidade(s).
+|    ├── gdf_counties.parquet         <- Conjunto dos dados especiais com ETL.
+|    └── housing.csv                  <- Conjunto de dados importado (csv)do Kaggle.
+|    └── housing.csv                  <- Conjunto de dados acima reduzido.
+|
 |
 ├── modelos            <- Modelos treinados e serializados, previsões de modelos ou resumos de modelos
 |
@@ -45,6 +38,19 @@ Clique no botão **Use this template** para criar um novo repositório com base 
 ├── relatorios         <- Análises geradas em HTML, PDF, LaTeX, etc.
 │   └── imagens        <- Gráficos e figuras gerados para serem usados em relatórios
 ```
+
+
+### DataSet
+
+Origem: [Conjunto de dados](https://www.kaggle.com/datasets/camnugent/california-housing-prices/data)
+
+Este conjunto de dados foi derivado do censo dos EUA de 1990, usando uma linha por grupo
+de blocos censitários. Um grupo de blocos é a menor unidade geográfica para a qual o
+Escritório do Censo dos EUA publica dados amostrais (um grupo de blocos geralmente tem
+uma população de 600 a 3.000 pessoas).
+
+
+
 
 ## Configuração do ambiente
 
