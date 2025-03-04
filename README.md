@@ -15,7 +15,7 @@ Atráves de dados do censo do estado da Califórnia, desenvolveremos um modelo d
 |
 ├── dados              <- Arquivos de dados para o projeto.
      │
-|    ├── california_counties.geojson  <- dados espaciais com detalhamento de localidade(s).
+|    ├── california_counties.geojson  <- Dados espaciais com detalhamento de localidade(s).
 |    ├── gdf_counties.parquet         <- Conjunto de dados espaciais com ETL.
 |    └── housing.csv                  <- Conjunto de dados importado (csv)do Kaggle.
 |    └── housing.csv                  <- Conjunto de dados acima reduzido.
@@ -27,15 +27,18 @@ Atráves de dados do censo do estado da Califórnia, desenvolveremos um modelo d
 |
 ├── notebooks          <- Cadernos Jupyter.
 │
-|      ├── __init__.py  <- Torna um módulo Python
-|      ├── config.py    <- Configurações básicas do projeto
-|      └── graficos.py  <- Scripts para criar visualizações exploratórias e orientadas a resultados
-
+|      ├── 01-jv-eda.ipynb  
+|      ├── 02-jv-mapas.ipynb    
+|      └── 03-jv-geo.ipynb 
+|      └── 04-jv-modelos.ipynb 
+|
 |   └──src             <- Código-fonte para uso neste projeto.
 |      │
-|      ├── __init__.py  <- Torna um módulo Python
-|      ├── config.py    <- Configurações básicas do projeto
-|      └── graficos.py  <- Scripts para criar visualizações exploratórias e orientadas a resultados
+|      ├──auxiliares.py <- Funçoes auxiliares.
+|      ├── __init__.py  <- Torna um módulo Python.
+|      ├── config.py    <- Configurações básicas do projeto.
+|      └── graficos.py  <- Scripts para criar visualizações exploratórias e orientadas a resultados.
+|      └── models.py.   <- Funções que auxiliam a contrução do modelo de previsão.
 |
 ├── referencias        <- Dicionários de dados, manuais e todos os outros materiais explicativos.
 |
