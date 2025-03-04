@@ -5,16 +5,19 @@ PASTA_PROJETO = Path(__file__).resolve().parents[2]
 
 PASTA_DADOS = PASTA_PROJETO / "dados"
 
-# coloque abaixo o caminho para os arquivos de dados de seu projeto
+# CAMINHO DE DADOS
+
 DADOS_ORIGINAIS = PASTA_DADOS / "housing.csv"
 DADOS_LIMPOS = PASTA_DADOS / "housing_clean.parquet"
 DADOS_GEO_ORIGINAIS = PASTA_DADOS / "california_counties.geojson"
 DADOS_GEO_MEDIAN = PASTA_DADOS / "gdf_counties.parquet"
 
-# coloque abaixo o caminho para os arquivos de modelos de seu projeto
+# CAMINHOS DE MODELOS
+
 PASTA_MODELOS = PASTA_PROJETO / "modelos"
 MODELO_FINAL = PASTA_MODELOS / "ridge_polyfeat_target_quantile.joblib"
 
-# coloque abaixo outros caminhos que você julgar necessário
+#  OUTROS CAMINHOS
+
 PASTA_RELATORIOS = PASTA_PROJETO / "relatorios"
 PASTA_IMAGENS = PASTA_RELATORIOS / "imagens"
