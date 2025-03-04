@@ -23,7 +23,7 @@ Atráves de dados do censo do estado da Califórnia, desenvolvemos um modelo de 
 |    ├── california_counties.geojson  <- Dados espaciais com detalhamento de localidade(s).
 |    ├── gdf_counties.parquet         <- Conjunto de dados espaciais com ETL.
 |    └── housing.csv                  <- Conjunto de dados importado (csv)do Kaggle.
-|    └── housing.csv                  <- Conjunto de dados acima reduzido.
+|    └── housing_clean.parquet        <- Conjunto de dados acima reduzido.
 |
 |
 ├── modelos            <- Modelos treinados e serializados, previsões de modelos ou resumos de modelos.
@@ -121,17 +121,16 @@ Por fim, incluímos um mapa interativo que destaca o condado do imóvel, oferece
 
 ### Ferramentas usadas: 
 
-```
-Linguagem de programação: Python.
 
+Linguagem de programação:<p> <br> ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+```
 Bibliotecas:
     geopandas==1.0.1
     joblib==1.4.2
     matplotlib==3.10.0
     numpy==2.2.1
-    pandas==2.2.3
+    pandas ==2.2.3
     pydeck==0.8.0
-    pyproj
     scikit-learn==1.6.1
     scipy==1.14.1
     seaborn==0.13.2
