@@ -7,6 +7,7 @@ Atráves de dados do censo do estado da Califórnia, desenvolveremos um modelo d
 ### Organização do projeto
 
 ```
+├── home.py            <- Arquivo gerador do aplicativo no Streamlit.
 ├── .env               <- Arquivo de variáveis de ambiente. (não versionar)
 ├── .gitignore         <- Arquivos e diretórios a serem ignorados pelo Git.
 ├── requirements.txt   <- O arquivo de requisitos para reproduzir o ambiente de análise.
