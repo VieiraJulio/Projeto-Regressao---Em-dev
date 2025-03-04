@@ -16,17 +16,21 @@ Atráves de dados do censo do estado da Califórnia, desenvolveremos um modelo d
 ├── dados              <- Arquivos de dados para o projeto.
      │
 |    ├── california_counties.geojson  <- dados espaciais com detalhamento de localidade(s).
-|    ├── gdf_counties.parquet         <- Conjunto dos dados especiais com ETL.
+|    ├── gdf_counties.parquet         <- Conjunto de dados espaciais com ETL.
 |    └── housing.csv                  <- Conjunto de dados importado (csv)do Kaggle.
 |    └── housing.csv                  <- Conjunto de dados acima reduzido.
 |
 |
-├── modelos            <- Modelos treinados e serializados, previsões de modelos ou resumos de modelos
+├── modelos            <- Modelos treinados e serializados, previsões de modelos ou resumos de modelos.
+|     |
+|     └── ridge_polyfeat_target_quantile.joblib  <- Modelo de Regressão
 |
-├── notebooks          <- Cadernos Jupyter. A convenção de nomenclatura é um número (para ordenação),
-│                         as iniciais do criador e uma descrição curta separada por `-`, por exemplo
-│                         `01-fb-exploracao-inicial-de-dados`.
+├── notebooks          <- Cadernos Jupyter.
 │
+|      ├── __init__.py  <- Torna um módulo Python
+|      ├── config.py    <- Configurações básicas do projeto
+|      └── graficos.py  <- Scripts para criar visualizações exploratórias e orientadas a resultados
+
 |   └──src             <- Código-fonte para uso neste projeto.
 |      │
 |      ├── __init__.py  <- Torna um módulo Python
