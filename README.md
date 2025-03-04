@@ -83,7 +83,61 @@ colunas:
   - `INLAND`: no interior
   - `NEAR OCEAN`: perto do oceano
   - `ISLAND`: ilha
-- `median_house_value`: valor mediano das casas no grupo de blocos (em dólares) 
+- `median_house_value`: valor mediano das casas no grupo de blocos (em dólares)
+
+
+### Mapa de Distribuição
+
+![image](https://github.com/user-attachments/assets/9426a726-eb07-4686-abf1-0c93a7e24913)
+
+### Metodologia
+
+A avaliação dos dados concentrou-se nas métricas detalhada das features que impactam o nosso target. 
+Após a análise exploratória, selecionamos 13 features. É possível acompanhar o processo no arquivo:
+
+```
+    01-jv-eda.pynb
+```
+Durante o desenvolvimento do modelo, aplicamos o GridSearch para otimizar os hiperparâmetros, o que nos permitiu identificar a combinação ideal de parâmetros para maximizar o desempenho. 
+Esse processo de avaliação sistemática aprimorou a robustez e a precisão do modelo, contribuindo significativamente para a sua generalização.
+
+A pipeline de melhor desempenho foi composta pelo modelo de regressão Ridge, combinada com uma transformação no target utilizando o Quantile Transformer. 
+
+![image](https://github.com/user-attachments/assets/539ebff6-6533-4e82-acbe-a17fa2a7f1d6)
+
+É possível testar e modificar os hiperparâmetros existentes no arquivo:
+
+```
+    04-jv-modelos.ipynb 
+```
+
+### Resultados
+
+Este modelo prevê preços de imóveis com base nos dados do censo da Califórnia dos anos 90. 
+O projeto envolveu uma análise exploratória de dados (EDA), testes de distribuição baseada nas posições dos imóveis nos mapas e um extenso processo de pré-processamento implementado em pipelines que resultaram na construção final do modelo.
+
+Além disso, desenvolvemos um aplicativo interativo em Streamlit com uma interface personalizada que facilita a utilização e iteração com o modelo. No aplicativo, o usuário pode visualizar a previsão do preço do imóvel, bem como explorar otimizações realizadas com um conjunto reduzido de features — uma abordagem pensada para simplificar a experiência do usuário sem comprometer a precisão das estimativas.
+Por fim, incluímos um mapa interativo que destaca o condado do imóvel, oferecendo uma perspectiva geográfica detalhada e auxiliando na análise regional dos preços.
+
+### Ferramentas usadas: 
+
+```
+Linguagem de programação: Python.
+
+Bibliotecas:
+    geopandas==1.0.1
+    joblib==1.4.2
+    matplotlib==3.10.0
+    numpy==2.2.1
+    pandas==2.2.3
+    pydeck==0.8.0
+    pyproj
+    scikit-learn==1.6.1
+    scipy==1.14.1
+    seaborn==0.13.2
+    Shapely==2.0.7
+    streamlit==1.42.2
+```
 
 ### Configuração do ambiente
 
@@ -104,6 +158,3 @@ colunas:
     b. Caso esteja utilizando outro gerenciador de ambientes, exporte as dependências
     para o arquivo `requirements.txt` ou outro formato de sua preferência. Adicione o
     arquivo ao controle de versão, removendo o arquivo `ambiente.yml`.
-
-
-Para mais informações sobre como usar Git e GitHub, [clique aqui](https://cienciaprogramada.com.br/2021/09/guia-definitivo-git-github/). Sobre ambientes virtuais, [clique aqui](https://cienciaprogramada.com.br/2020/08/ambiente-virtual-projeto-python/).
